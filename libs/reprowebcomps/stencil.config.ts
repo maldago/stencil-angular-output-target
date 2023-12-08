@@ -36,7 +36,6 @@ export const config: Config = {
       componentCorePackage: '@repro/reprowebcomps',
       directivesProxyFile: '../../../libs/ng-repro/src/directives/proxies.ts',
       directivesArrayFile: '../../../libs/ng-repro/src/directives/index.ts',
-      customElementsDir: 'dist/components',
       outputType: 'scam',
 
     })
