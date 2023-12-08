@@ -1,0 +1,52 @@
+{
+  "name": "ng-repro",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/ng-repro/src",
+  "prefix": "repro",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/ng-repro/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/ng-repro/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/ng-repro/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "publish": {
+      "executor": "@computas/nx-yarn:publish",
+      "options": {
+        "outputPath": "dist/libs/ng-repro",
+        "publishTag": "alpha",
+        "access": "restricted"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/ng-repro/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/ng-repro/**/*.ts",
+          "libs/ng-repro/**/*.html",
+          "libs/ng-repro/package.json"
+        ]
+      }
+    }
+  }
+}

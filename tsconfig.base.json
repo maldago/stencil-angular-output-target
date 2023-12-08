@@ -1,0 +1,25 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@repro/reprowebcomps": ["dist/libs/reprowebcomps"],
+      "@repro/reprowebcomps/*": ["dist/libs/reprowebcomps/dist/*"],
+      "@repro/reprowebcomps/loader": ["dist/libs/reprowebcomps/loader"],
+      "@repro/ng-repro": ["libs/ng-repro/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

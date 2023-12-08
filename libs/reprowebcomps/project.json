@@ -1,0 +1,67 @@
+{
+  "name": "reprowebcomps",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/reprowebcomps/src",
+  "projectType": "library",
+  "generators": {
+    "@nxext/stencil:component": {
+      "style": "css"
+    }
+  },
+  "tags": [],
+  "targets": {
+    "test": {
+      "executor": "@nxext/stencil:test",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "libs/reprowebcomps/tsconfig.lib.json",
+        "configPath": "libs/reprowebcomps/stencil.config.ts",
+        "outputPath": "dist/libs/reprowebcomps"
+      }
+    },
+    "build": {
+      "executor": "@nxext/stencil:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "libs/reprowebcomps/tsconfig.lib.json",
+        "configPath": "libs/reprowebcomps/stencil.config.ts",
+        "outputPath": "dist/libs/reprowebcomps"
+      },
+      "configurations": {
+        "production": {
+          "dev": false,
+          "prod": true
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nxext/stencil:serve",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "libs/reprowebcomps/tsconfig.lib.json",
+        "configPath": "libs/reprowebcomps/stencil.config.ts",
+        "outputPath": "dist/libs/reprowebcomps"
+      }
+    },
+    "e2e": {
+      "executor": "@nxext/stencil:e2e",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "libs/reprowebcomps/tsconfig.lib.json",
+        "configPath": "libs/reprowebcomps/stencil.config.ts",
+        "outputPath": "dist/libs/reprowebcomps"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": "libs/reprowebcomps/**/*.{ts,tsx}"
+      }
+    }
+  }
+}
